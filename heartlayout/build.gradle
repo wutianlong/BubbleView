@@ -1,5 +1,9 @@
 apply plugin: 'com.android.library'
 
+//应用插件
+apply plugin: 'com.github.dcendents.android-maven'
+apply plugin: 'com.jfrog.bintray'
+
 android {
     compileSdkVersion 22
     buildToolsVersion "23.0.2"
@@ -20,4 +24,82 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
+}
+
+//定义公共参数
+def siteUrl = 'https://github.com/wutianlong/BubbleView'   // 项目的主页
+def gitUrl = 'https://github.com/wutianlong/BubbleView.git'   // Git仓库的url
+
+//配置android-maven-gradle-plugin插件
+group = "com.codes.wutianlong.bubbleview"   // groupId,一般由host+artifactId组成
+version = "1.0.0"  //版本号,以后更新library时,它也要跟着增加
+
+
+//配置android-maven-gradle-plugin插件
+install {
+    repositories.mavenInstaller {
+        // This generates POM.xml with proper parameters
+        pom {
+            project {
+                packaging 'aar'
+
+                // Add your description here
+                name 'Android Bubble View'     //项目的名称
+                description 'heart layout,cycle up bubble view for android'  //项目的描述
+                url siteUrl
+
+                // Set your license
+                licenses {
+                    license {
+                        name 'The Apache Software License, Version 2.0'
+                        url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                    }
+                }
+
+                developers {
+                    developer {
+                        id 'wutianlong'        //bintray的username
+                        name 'wutianlong'          //姓名
+                        email 'wutianlong0701@gmail.com'      //邮箱
+                    }
+                }
+
+                scm {
+                    connection gitUrl
+                    developerConnection gitUrl
+                    url siteUrl
+                }
+            }
+        }
+    }
+}
+
+
+//配置gradle-bintray-plugin插件
+Properties properties = new Properties()
+properties.load(project.rootProject.file('local.properties').newDataInputStream())
+
+//对gradle-bintray-plugin插件的配置,全部写在 bintray{ ... } 中
+bintray {
+    user = properties.getProperty("bintray.user")
+    key = properties.getProperty("bintray.apikey")
+
+    configurations = ['archives']
+
+    pkg {
+        repo = "maven"
+        name = "bubbleview"    //artifactId,会作为library的名称显示在JCenter中
+        websiteUrl = siteUrl
+        vcsUrl = gitUrl
+        licenses = ["Apache-2.0"]
+        publish = true
+
+        version {
+            desc = 'a powerful bubble view for android'
+           /* gpg {
+                sign = true //Determines whether to GPG sign the files. The default is false
+                passphrase = properties.getProperty("bintray.gpg.password")  //Optional. The passphrase for GPG signing'
+            }*/
+        }
+    }
 }
