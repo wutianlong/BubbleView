@@ -1,9 +1,35 @@
 apply plugin: 'com.android.library'
-//应用插件
-apply plugin: 'com.github.dcendents.android-maven'
-apply plugin: 'com.jfrog.bintray'
 
-//version = "1.2.7"
+
+
+
+ext {
+    bintrayRepo = 'maven'
+    bintrayName = 'bubbleviews'
+    orgName = 'superman'
+
+    publishedGroupId = 'superman.bubbleviews'
+    libraryName = 'bubbleviews'
+    artifact = 'bubbleviews'
+
+    libraryDescription = 'Oh hi, this is a nice bubbleview  for a project'
+
+    siteUrl = 'https://github.com/wutianlong/BubbleView'
+    gitUrl = 'https://github.com/wutianlong/BubbleView.git'
+
+    libraryVersion = '1.7.2'
+
+    developerId = 'wutianlong'
+    developerName = 'wutianlong'
+    developerEmail = 'wutianlong@gmail.com'
+
+    licenseName = 'The Apache Software License, Version 2.0'
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    allLicenses = ["Apache-2.0"]
+}
+
+
+
 
 android {
     compileSdkVersion 22
@@ -27,6 +53,126 @@ dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
 }
 
+
+
+
+
+//===============================================
+apply plugin: 'com.jfrog.bintray'
+
+version = libraryVersion
+
+if (project.hasProperty("android")) { // Android libraries
+    task sourcesJar(type: Jar) {
+        classifier = 'sources'
+        from android.sourceSets.main.java.srcDirs
+    }
+
+    task javadoc(type: Javadoc) {
+        source = android.sourceSets.main.java.srcDirs
+        classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+    }
+} else { // Java libraries
+    task sourcesJar(type: Jar, dependsOn: classes) {
+        classifier = 'sources'
+        from sourceSets.main.allSource
+    }
+}
+
+task javadocJar(type: Jar, dependsOn: javadoc) {
+    classifier = 'javadoc'
+    from javadoc.destinationDir
+}
+
+artifacts {
+    archives javadocJar
+    archives sourcesJar
+}
+
+// Bintray
+Properties properties = new Properties()
+properties.load(project.rootProject.file('local.properties').newDataInputStream())
+
+bintray {
+    user = properties.getProperty("bintray.user")
+    key = properties.getProperty("bintray.apikey")
+
+    configurations = ['archives']
+    pkg {
+        repo = bintrayRepo
+        name = bintrayName
+        userOrg = orgName
+        desc = libraryDescription
+        websiteUrl = siteUrl
+        vcsUrl = gitUrl
+        licenses = allLicenses
+        publish = true
+        publicDownloadNumbers = true
+        version {
+            desc = libraryDescription
+           /* gpg {
+                sign = true //Determines whether to GPG sign the files. The default is false
+                passphrase = properties.getProperty("bintray.gpg.password")
+                //Optional. The passphrase for GPG signing'
+            }*/
+        }
+    }
+}
+
+
+
+
+
+
+//============================================
+apply plugin: 'com.github.dcendents.android-maven'
+
+group = publishedGroupId                               // Maven Group ID for the artifact
+
+install {
+    repositories.mavenInstaller {
+        // This generates POM.xml with proper parameters
+        pom {
+            project {
+                packaging 'aar'
+                groupId publishedGroupId
+                artifactId artifact
+
+                // Add your description here
+                name libraryName
+                description libraryDescription
+                url siteUrl
+
+                // Set your license
+                licenses {
+                    license {
+                        name licenseName
+                        url licenseUrl
+                    }
+                }
+                developers {
+                    developer {
+                        id developerId
+                        name developerName
+                        email developerEmail
+                    }
+                }
+                scm {
+                    connection gitUrl
+                    developerConnection gitUrl
+                    url siteUrl
+
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+
 /*publish {
     userOrg = 'superman'
     groupId = 'com.wutianlong'     //jcenter上的路径
@@ -37,6 +183,7 @@ dependencies {
 }*/
 
 
+/*
 
 
 def siteUrl = 'https://github.com/wutianlong/BubbleView'      // 项目的主页
@@ -104,13 +251,14 @@ bintray {
     pkg {
         repo = "maven"
         name = "bubbleviews"	//发布到JCenter上的项目名字
+        useOrg ="superman"
         websiteUrl = siteUrl
         vcsUrl = gitUrl
         licenses = ["Apache-2.0"]
         publish = true
-
         version {
             vcsTag = '1.2.7'
         }
     }
 }
+*/
