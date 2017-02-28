@@ -8,7 +8,7 @@ import java.util.Random;
 import java.util.Timer;
 import java.util.TimerTask;
 
-import tyrantgit.widget.HeartLayout;
+import tyrantgit.wutianlong.HeartLayout;
 
 
 public class MainActivity extends Activity {

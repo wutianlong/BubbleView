@@ -8,7 +8,7 @@ ext {
     bintrayName = 'bubbleviews'
     orgName = 'superman'
 
-    publishedGroupId = 'superman.bubbleviews'
+    publishedGroupId = 'tyrantgit.wutianlong.bubbleviews'
     libraryName = 'bubbleviews'
     artifact = 'bubbleviews'
 
@@ -17,7 +17,7 @@ ext {
     siteUrl = 'https://github.com/wutianlong/BubbleView'
     gitUrl = 'https://github.com/wutianlong/BubbleView.git'
 
-    libraryVersion = '1.7.2'
+    libraryVersion = '1.7.6'
 
     developerId = 'wutianlong'
     developerName = 'wutianlong'
@@ -25,7 +25,7 @@ ext {
 
     licenseName = 'The Apache Software License, Version 2.0'
     licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
-    allLicenses = ["Apache-2.0"]
+    allLicenses = project.property('licenses').split(',')
 }
 
 
@@ -107,15 +107,15 @@ bintray {
         vcsUrl = gitUrl
         licenses = allLicenses
         publish = true
-        publicDownloadNumbers = true
-        version {
-            desc = libraryDescription
-           /* gpg {
-                sign = true //Determines whether to GPG sign the files. The default is false
-                passphrase = properties.getProperty("bintray.gpg.password")
-                //Optional. The passphrase for GPG signing'
-            }*/
-        }
+        //publicDownloadNumbers = true
+        /* version {
+             desc = libraryDescription
+             gpg {
+                 sign = true //Determines whether to GPG sign the files. The default is false
+                 passphrase = properties.getProperty("bintray.gpg.password")
+                 //Optional. The passphrase for GPG signing'
+             }
+        }*/
     }
 }
 

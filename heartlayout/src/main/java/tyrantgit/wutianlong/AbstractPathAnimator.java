@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package tyrantgit.widget;
+package tyrantgit.wutianlong;
 
 import android.content.res.Resources;
 import android.content.res.TypedArray;
