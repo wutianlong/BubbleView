@@ -1,0 +1,13 @@
+-author 
+-charset 'UTF-8'
+-classpath '/Users/wutianlong/android-sdks/platforms/android-22/android.jar'
+-d '/Users/wutianlong/GitHub/BubbleView/bubbleviews/build/docs/javadoc'
+-doctitle 'bubbleviews 2.6.0 API'
+-encoding 'UTF-8'
+-quiet 
+-version 
+-windowtitle 'bubbleviews 2.6.0 API'
+'/Users/wutianlong/GitHub/BubbleView/bubbleviews/src/main/java/tyrantgit/wutianlong/AbstractPathAnimator.java'
+'/Users/wutianlong/GitHub/BubbleView/bubbleviews/src/main/java/tyrantgit/wutianlong/HeartLayout.java'
+'/Users/wutianlong/GitHub/BubbleView/bubbleviews/src/main/java/tyrantgit/wutianlong/HeartView.java'
+'/Users/wutianlong/GitHub/BubbleView/bubbleviews/src/main/java/tyrantgit/wutianlong/PathAnimator.java'

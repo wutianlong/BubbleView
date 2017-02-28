@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="HeartLayout"><attr format="dimension" name="initX"/><attr format="dimension" name="initY"/><attr format="dimension" name="xRand"/><attr format="dimension" name="animLengthRand"/><attr format="dimension" name="xPointFactor"/><attr format="dimension" name="animLength"/><attr format="dimension" name="heart_width"/><attr format="dimension" name="heart_height"/><attr format="integer" name="bezierFactor"/><attr format="integer" name="anim_duration"/></declare-styleable>
+    <dimen name="heart_anim_bezier_x_rand">40.0dp</dimen>
+    <dimen name="heart_anim_init_x">50.0dp</dimen>
+    <dimen name="heart_anim_init_y">25.0dp</dimen>
+    <dimen name="heart_anim_length">100.0dp</dimen>
+    <dimen name="heart_anim_length_rand">150.0dp</dimen>
+    <dimen name="heart_anim_x_point_factor">30.0dp</dimen>
+    <dimen name="heart_size_height">27.3dp</dimen>
+    <dimen name="heart_size_width">32.5dp</dimen>
+    <integer name="anim_duration">3000</integer>
+    <integer name="heart_anim_bezier_factor">6</integer>
+    <string name="app_name">HeartLayout</string>
+</resources>

@@ -4,20 +4,22 @@ apply plugin: 'com.android.library'
 
 
 ext {
-    bintrayRepo = 'maven'
-    bintrayName = 'bubbleviews'
-    orgName = 'superman'
+    bintrayRepo = 'maven' // 必须为maven,和网页中指定的一致
 
-    publishedGroupId = 'tyrantgit.wutianlong.bubbleviews'
+    bintrayName = 'bubbleviews'  // module名，library名，artifactid名  需一致
     libraryName = 'bubbleviews'
     artifact = 'bubbleviews'
+
+    orgName = 'superman'  // 网站中自己设定组织
+
+    publishedGroupId = 'tyrantgit.wutianlong.bubbleviews'
 
     libraryDescription = 'Oh hi, this is a nice bubbleview  for a project'
 
     siteUrl = 'https://github.com/wutianlong/BubbleView'
     gitUrl = 'https://github.com/wutianlong/BubbleView.git'
 
-    libraryVersion = '2.0.0'
+    libraryVersion = '2.6.0'
 
     developerId = 'wutianlong'
     developerName = 'wutianlong'
@@ -128,6 +130,16 @@ bintray {
 apply plugin: 'com.github.dcendents.android-maven'
 
 group = publishedGroupId                               // Maven Group ID for the artifact
+
+javadoc {
+    options{
+        encoding "UTF-8"
+        charSet 'UTF-8'
+        author true
+        version true
+       // links "http://docs.oracle.com/javase/7/docs/api"
+    }
+}
 
 install {
     repositories.mavenInstaller {

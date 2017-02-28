@@ -1,0 +1,216 @@
+[
+    {
+        "outputFile": "/Users/wutianlong/GitHub/BubbleView/bubbleviews/build/intermediates/incremental/mergeDebugAndroidTestResources/merged.dir/values/values.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 3,
+                    "startColumn": 4,
+                    "startOffset": 553,
+                    "endColumn": 57,
+                    "endOffset": 606
+                },
+                "from": {
+                    "file": "/Users/wutianlong/GitHub/BubbleView/bubbleviews/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 553,
+                        "endColumn": 57,
+                        "endOffset": 606
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 4,
+                    "startColumn": 4,
+                    "startOffset": 611,
+                    "endColumn": 50,
+                    "endOffset": 657
+                },
+                "from": {
+                    "file": "/Users/wutianlong/GitHub/BubbleView/bubbleviews/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 611,
+                        "endColumn": 50,
+                        "endOffset": 657
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 5,
+                    "startColumn": 4,
+                    "startOffset": 662,
+                    "endColumn": 50,
+                    "endOffset": 708
+                },
+                "from": {
+                    "file": "/Users/wutianlong/GitHub/BubbleView/bubbleviews/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 5,
+                        "startColumn": 4,
+                        "startOffset": 662,
+                        "endColumn": 50,
+                        "endOffset": 708
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 6,
+                    "startColumn": 4,
+                    "startOffset": 713,
+                    "endColumn": 51,
+                    "endOffset": 760
+                },
+                "from": {
+                    "file": "/Users/wutianlong/GitHub/BubbleView/bubbleviews/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 6,
+                        "startColumn": 4,
+                        "startOffset": 713,
+                        "endColumn": 51,
+                        "endOffset": 760
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 7,
+                    "startColumn": 4,
+                    "startOffset": 765,
+                    "endColumn": 56,
+                    "endOffset": 817
+                },
+                "from": {
+                    "file": "/Users/wutianlong/GitHub/BubbleView/bubbleviews/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 7,
+                        "startColumn": 4,
+                        "startOffset": 765,
+                        "endColumn": 56,
+                        "endOffset": 817
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 8,
+                    "startColumn": 4,
+                    "startOffset": 822,
+                    "endColumn": 58,
+                    "endOffset": 876
+                },
+                "from": {
+                    "file": "/Users/wutianlong/GitHub/BubbleView/bubbleviews/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 8,
+                        "startColumn": 4,
+                        "startOffset": 822,
+                        "endColumn": 58,
+                        "endOffset": 876
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 9,
+                    "startColumn": 4,
+                    "startOffset": 881,
+                    "endColumn": 50,
+                    "endOffset": 927
+                },
+                "from": {
+                    "file": "/Users/wutianlong/GitHub/BubbleView/bubbleviews/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 9,
+                        "startColumn": 4,
+                        "startOffset": 881,
+                        "endColumn": 50,
+                        "endOffset": 927
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 10,
+                    "startColumn": 4,
+                    "startOffset": 932,
+                    "endColumn": 49,
+                    "endOffset": 977
+                },
+                "from": {
+                    "file": "/Users/wutianlong/GitHub/BubbleView/bubbleviews/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 10,
+                        "startColumn": 4,
+                        "startOffset": 932,
+                        "endColumn": 49,
+                        "endOffset": 977
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 11,
+                    "startColumn": 4,
+                    "startOffset": 982,
+                    "endColumn": 48,
+                    "endOffset": 1026
+                },
+                "from": {
+                    "file": "/Users/wutianlong/GitHub/BubbleView/bubbleviews/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 11,
+                        "startColumn": 4,
+                        "startOffset": 982,
+                        "endColumn": 48,
+                        "endOffset": 1026
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 12,
+                    "startColumn": 4,
+                    "startOffset": 1031,
+                    "endColumn": 56,
+                    "endOffset": 1083
+                },
+                "from": {
+                    "file": "/Users/wutianlong/GitHub/BubbleView/bubbleviews/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 12,
+                        "startColumn": 4,
+                        "startOffset": 1031,
+                        "endColumn": 56,
+                        "endOffset": 1083
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 13,
+                    "startColumn": 4,
+                    "startOffset": 1088,
+                    "endColumn": 48,
+                    "endOffset": 1132
+                },
+                "from": {
+                    "file": "/Users/wutianlong/GitHub/BubbleView/bubbleviews/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 13,
+                        "startColumn": 4,
+                        "startOffset": 1088,
+                        "endColumn": 48,
+                        "endOffset": 1132
+                    }
+                }
+            }
+        ]
+    }
+]
