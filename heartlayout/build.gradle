@@ -1,8 +1,9 @@
 apply plugin: 'com.android.library'
-
 //应用插件
 apply plugin: 'com.github.dcendents.android-maven'
 apply plugin: 'com.jfrog.bintray'
+
+//version = "1.2.7"
 
 android {
     compileSdkVersion 22
@@ -26,28 +27,31 @@ dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
 }
 
-//定义公共参数
-def siteUrl = 'https://github.com/wutianlong/BubbleView'   // 项目的主页
+/*publish {
+    userOrg = 'superman'
+    groupId = 'com.wutianlong'     //jcenter上的路径
+    artifactId = 'bubbleviews'     //项目名称
+    publishVersion = '1.0.0'       //版本号
+    desc = 'Oh hi, this is a nice bubbleview  for a project'   //描述，不重要
+    website = 'https://github.com/wutianlong/BubbleView'   //网站，不重要；尽量模拟github上的地址，例如我这样的；当然你有地址最好了
+}*/
+
+
+
+
+def siteUrl = 'https://github.com/wutianlong/BubbleView'      // 项目的主页
 def gitUrl = 'https://github.com/wutianlong/BubbleView.git'   // Git仓库的url
+group = "com.wutianlong"                   // Maven Group ID for the artifact，一般填你唯一的包名
 
-//配置android-maven-gradle-plugin插件
-group = "com.codes.wutianlong.bubbleview"   // groupId,一般由host+artifactId组成
-version = "1.0.0"  //版本号,以后更新library时,它也要跟着增加
-
-
-//配置android-maven-gradle-plugin插件
 install {
     repositories.mavenInstaller {
         // This generates POM.xml with proper parameters
         pom {
             project {
                 packaging 'aar'
-
                 // Add your description here
-                name 'Android Bubble View'     //项目的名称
-                description 'heart layout,cycle up bubble view for android'  //项目的描述
+                name 'Oh hi, this is a nice bubbleview  for a project' 	//项目描述
                 url siteUrl
-
                 // Set your license
                 licenses {
                     license {
@@ -55,15 +59,13 @@ install {
                         url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
                     }
                 }
-
                 developers {
                     developer {
-                        id 'wutianlong'        //bintray的username
-                        name 'wutianlong'          //姓名
-                        email 'wutianlong0701@gmail.com'      //邮箱
+                        id 'wutianlong'		//填写的一些基本信息
+                        name 'wutianlong'
+                        email 'wutianlong0701@gmail.com'
                     }
                 }
-
                 scm {
                     connection gitUrl
                     developerConnection gitUrl
@@ -74,32 +76,41 @@ install {
     }
 }
 
+task sourcesJar(type: Jar) {
+    from android.sourceSets.main.java.srcDirs
+    classifier = 'sources'
+}
+task javadoc(type: Javadoc) {
+    source = android.sourceSets.main.java.srcDirs
+    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+}
+task javadocJar(type: Jar, dependsOn: javadoc) {
+    classifier = 'javadoc'
+    from javadoc.destinationDir
+}
 
-//配置gradle-bintray-plugin插件
+
+artifacts {
+    archives javadocJar
+    archives sourcesJar
+}
+
 Properties properties = new Properties()
 properties.load(project.rootProject.file('local.properties').newDataInputStream())
-
-//对gradle-bintray-plugin插件的配置,全部写在 bintray{ ... } 中
 bintray {
     user = properties.getProperty("bintray.user")
     key = properties.getProperty("bintray.apikey")
-
     configurations = ['archives']
-
     pkg {
         repo = "maven"
-        name = "bubbleview"    //artifactId,会作为library的名称显示在JCenter中
+        name = "bubbleviews"	//发布到JCenter上的项目名字
         websiteUrl = siteUrl
         vcsUrl = gitUrl
         licenses = ["Apache-2.0"]
         publish = true
 
         version {
-            desc = 'a powerful bubble view for android'
-           /* gpg {
-                sign = true //Determines whether to GPG sign the files. The default is false
-                passphrase = properties.getProperty("bintray.gpg.password")  //Optional. The passphrase for GPG signing'
-            }*/
+            vcsTag = '1.2.7'
         }
     }
 }

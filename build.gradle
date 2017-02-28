@@ -6,22 +6,22 @@ buildscript {
     dependencies {
         classpath 'com.android.tools.build:gradle:2.2.3'
 
-        //把library上传到bintray所需的插件
+
         classpath 'com.github.dcendents:android-maven-gradle-plugin:1.4.1'
         classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7.1'
 
-        // NOTE: Do not place your application dependencies here; they belong
-        // in the individual module build.gradle files
+        //classpath 'com.novoda:bintray-release:0.3.4'
+
+        //classpath 'codes-wutianlong.bubbleviews:bubbleviews:1.2.3@aar'
+
     }
 }
 allprojects {
     repositories {
         jcenter()
+
+      /*  maven {
+            url 'https://dl.bintray.com/superman/maven/'
+        }*/
     }
 }
-
-/*android {
-    buildToolsVersion '23.0.2'
-}
-dependencies {
-}*/
