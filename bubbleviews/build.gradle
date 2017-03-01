@@ -1,7 +1,9 @@
 apply plugin: 'com.android.library'
 
-
-
+// 需要在自己的maven仓库下,先建立好和library名bubbleviews 一致的package,再执行命令
+//  上传时 执行下面任务：
+//  ./gradlew install
+//  ./gradlew bintrayUpload
 
 ext {
     bintrayRepo = 'maven'         // 必须为maven,和网页中指定的一致
@@ -172,6 +174,3 @@ install {
     }
 }
 
-//  上传时 执行下面任务：
-//  ./gradlew install
-//  ./gradlew bintrayUpload
