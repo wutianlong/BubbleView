@@ -1,2 +1,1 @@
-include ':app'
-// , ':bubbleviews'
+include ':app' , ':bubbleviews'

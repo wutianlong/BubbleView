@@ -4,22 +4,23 @@ apply plugin: 'com.android.library'
 
 
 ext {
-    bintrayRepo = 'maven' // 必须为maven,和网页中指定的一致
+    bintrayRepo = 'maven'         // 必须为maven,和网页中指定的一致
 
-    bintrayName = 'bubbleviews'  // module名，library名，artifactid名  需一致
+    bintrayName = 'bubbleviews'   // module名，library名，artifactid名  需一致
     libraryName = 'bubbleviews'
     artifact = 'bubbleviews'
 
-    orgName = 'superman'  // 网站中自己设定组织
+    orgName = 'superman'          // 网站中自己设定组织
 
-    publishedGroupId = 'tyrantgit.wutianlong.bubbleviews'
+    // http://jcenter.bintray.com/  可以在此路径下找到, 前2位固定（方便在jcenter中查找）+library名字
+    publishedGroupId = 'superman.wutianlong.bubbleviews'
 
     libraryDescription = 'Oh hi, this is a nice bubbleview  for a project'
 
     siteUrl = 'https://github.com/wutianlong/BubbleView'
     gitUrl = 'https://github.com/wutianlong/BubbleView.git'
 
-    libraryVersion = '2.6.0'
+    libraryVersion = '1.0.0'
 
     developerId = 'wutianlong'
     developerName = 'wutianlong'
@@ -27,7 +28,7 @@ ext {
 
     licenseName = 'The Apache Software License, Version 2.0'
     licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
-    allLicenses = project.property('licenses').split(',')
+    allLicenses = ["Apache-2.0"]
 }
 
 
@@ -54,10 +55,6 @@ android {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
 }
-
-
-
-
 
 //===============================================
 apply plugin: 'com.jfrog.bintray'
@@ -109,7 +106,7 @@ bintray {
         vcsUrl = gitUrl
         licenses = allLicenses
         publish = true
-        //publicDownloadNumbers = true
+        publicDownloadNumbers = true
         /* version {
              desc = libraryDescription
              gpg {
@@ -121,23 +118,18 @@ bintray {
     }
 }
 
-
-
-
-
-
 //============================================
 apply plugin: 'com.github.dcendents.android-maven'
 
 group = publishedGroupId                               // Maven Group ID for the artifact
 
 javadoc {
-    options{
+    options {
         encoding "UTF-8"
         charSet 'UTF-8'
         author true
         version true
-       // links "http://docs.oracle.com/javase/7/docs/api"
+        // links "http://docs.oracle.com/javase/7/docs/api"
     }
 }
 
@@ -179,3 +171,7 @@ install {
         }
     }
 }
+
+//  上传时 执行下面任务：
+//  ./gradlew install
+//  ./gradlew bintrayUpload
