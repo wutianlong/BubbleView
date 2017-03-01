@@ -5,6 +5,8 @@ apply plugin: 'com.android.library'
 //  ./gradlew install
 //  ./gradlew bintrayUpload
 
+// bintray网页中要用自己的organise, 不要用带premium dashboard的组织，否则到期后organise会被删除
+
 ext {
     bintrayRepo = 'maven'         // 必须为maven,和网页中指定的一致
 
