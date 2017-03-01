@@ -10,18 +10,14 @@ buildscript {
         classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.4'
         classpath 'com.github.dcendents:android-maven-gradle-plugin:1.4.1'
 
-        //classpath 'com.novoda:bintray-release:0.3.4'
-
-        //classpath 'codes-wutianlong.bubbleviews:bubbleviews:1.2.3@aar'
-
     }
 }
 allprojects {
     repositories {
         jcenter()
 
-      /*  maven {
-            url 'https://dl.bintray.com/superman/maven/'
+       /* maven {
+            url 'https://dl.bintray.com/superman/maven'
         }*/
     }
 }

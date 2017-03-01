@@ -20,9 +20,15 @@ android {
     }
 }
 
+
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile project(path: ':bubbleviews')
+
+     compile 'tyrantgit.wutianlong.bubbleviews:bubbleviews:2.6.0'
+
+    // compile project(path: ':bubbleviews')
+
+
 }
 
 
